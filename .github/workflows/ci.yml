@@ -1,8 +1,8 @@
 name: Continuous Integration
 on:
-   pull_request:
+  pull_request:
     branches:
-      -main
+      - main
 
 jobs:
   build:
@@ -10,10 +10,11 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      
+
+      - name: List files
+        run: ls -R
+
       - name: Python Lint Code Scanning Action
         uses: advanced-security/python-lint-code-scanning-action@v1.1.2
-
-        
         with:
           linter: pylint
