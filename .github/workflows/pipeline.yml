@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+permissions:
+  security-events: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,17 +26,17 @@ jobs:
         with:
           linter: pylint
 
-      - name: Simular Build (opcional - pode ser testes, compilação, etc.)
+      - name: Simular Build (opcional)
         run: echo "Build realizado com sucesso!"
 
-      - name: Upload Artifact 
+      - name: Upload Artifact (opcional)
         uses: actions/upload-artifact@v4
         with:
           name: projeto-codigo
-          path: '.' # Upload de todo o diretório do projeto
+          path: '.'
 
   deploy:
-    needs: build # Garante que o job 'build' termine com sucesso antes de iniciar
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact (se você fez upload no build)
