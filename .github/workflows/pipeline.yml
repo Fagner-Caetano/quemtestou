@@ -10,6 +10,7 @@ on:
 
 permissions:
   security-events: write
+  contents: read # Adicionando permissão de leitura de conteúdo
 
 jobs:
   build:
