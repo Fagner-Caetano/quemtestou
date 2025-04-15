@@ -5,3 +5,4 @@ def verificar_par_impar(numero):
     return f"{numero} é um número par."
   else:
     return f"{numero} é um número ímpar."
+  
