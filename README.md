@@ -32,7 +32,7 @@ Este repositório conta com validações automáticas para garantir a padroniza�
 - ✅ Correção automática de espaços em branco e quebras de linha
 - ✅ Integração contínua via **GitHub Actions**
 
-![CI Status](https://github.com/usuario/repositorio/actions/workflows/pipeline.yml/badge.svg)
+![CI/CD Status](https://github.com/Fagner-Caetano/quemtestou/actions/runs/14519930312)
 
 ---
 
