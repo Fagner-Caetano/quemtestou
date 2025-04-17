@@ -11,4 +11,3 @@ try:
         time.sleep(5)  # intervalo de 5 segundos.
 except KeyboardInterrupt:
     print("\nContainer encerrado pelo usuário.")
-
