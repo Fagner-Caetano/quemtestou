@@ -1,18 +1,13 @@
-# Validação se o n° é par ou impar
+import time
+import datetime
 
-
-def verificar_par_impar(numero):
-    if numero % 2 == 0:
-        return f"{numero} eh um numero par."
-    else:
-        resultado = f"{numero} eh um numero impar."
-        return resultado
-
-
-numero_teste = 10
-resultado = verificar_par_impar(numero_teste)
-print(resultado)
-
-numero_teste_2 = 7
-resultado_2 = verificar_par_impar(numero_teste_2)
-print(resultado_2)
+count = 1
+try:
+    print("Container iniciado. Pressione Ctrl+C para encerrar.")
+    while True:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(f"[{current_time}] O container rodou {count}x...")
+        count += 1
+        time.sleep(5)  # intervalo de 5 segundos.
+except KeyboardInterrupt:
+    print("\nContainer encerrado pelo usuário.")
