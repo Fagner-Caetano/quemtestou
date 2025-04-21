@@ -3,7 +3,7 @@
 Este projeto simula a execução de um container em Python, imprimindo periodicamente no terminal o tempo de execução.
 
 ---
-
+ 
 ## 📁 Estrutura do Projeto
 
 - `main.py` — Script principal com a lógica de execução contínua.
