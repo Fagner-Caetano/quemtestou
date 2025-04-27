@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  build: # Job para construir e testar o código
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -19,11 +19,12 @@ jobs:
         with:
           linter: pylint
 
-  discord: # Job para enviar notificação ao Discord
+  discord:
     runs-on: ubuntu-latest
-    needs: build # Garante que o job `build` seja executado antes do `discord`
+    needs: build
     steps:
       - name: Send Discord Notification
-        uses: johnnyhuy/actions-discord-git-webhook@main
+        uses: Ilshidur/action-discord@master
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: "✅ Build e análise finalizados com sucesso para o PR!"
