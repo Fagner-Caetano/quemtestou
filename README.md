@@ -32,6 +32,7 @@ Este repositório conta com validações automáticas para garantir a padroniza�
 - ✅ Correção automática de espaços em branco e quebras de linha
 - ✅ Integração contínua via **GitHub Actions**
 
+
 ---
 
 ## 📦 Como Executar
@@ -72,4 +73,5 @@ Todas as verificações passam com sucesso (vide status acima)
 
 O projeto segue boas práticas de formatação e automação via CI/CD
 
-Desenvolvido por Fagner Caetano ✌️
+
+
