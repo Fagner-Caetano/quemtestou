@@ -60,7 +60,7 @@ def send_discord_notification(message):
 A cada execução do script, o Discord receberá uma notificação.
 ```
 ---
-📂 CI/CD
+## 📂 CI/CD
 A pipeline automatizada inclui os seguintes passos:
 
 Instalação de dependências
@@ -74,8 +74,9 @@ Simulação de build e deploy
 Upload e download de artefatos (opcional)
 
 ---
-🧪 Testes Unitários com capsys
-Os testes unitários são realizados utilizando o framework pytest. Para testar a execução do script, usamos o capsys para capturar a saída do terminal e garantir que o comportamento esperado aconteça.
+
+## 🧪 Testes Unitários
+Com capsys os testes unitários são realizados utilizando o framework pytest. Para testar a execução do script, usamos o capsys para capturar a saída do terminal e garantir que o comportamento esperado aconteça.
 
 Exemplo de teste:
 Crie um arquivo de teste test_main.py:
