@@ -24,7 +24,8 @@ jobs:
     needs: build
     steps:
       - name: Send Discord Notification
-        uses: tsickert/discord-webhook@v5
-        with:
-          url: ${{ secrets.DISCORD_WEBHOOK }}
-          content: "✅ Build e análise finalizados com sucesso para o PR!"
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d "{\"content\": \"✅ Build e análise finalizados com sucesso para o PR!\"}" \
+          ${{ secrets.DISCORD_WEBHOOK }}
