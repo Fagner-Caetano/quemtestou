@@ -24,7 +24,7 @@ jobs:
     needs: build
     steps:
       - name: Send Discord Notification
-        uses: Ilshidur/action-discord@master
+        uses: Ilshidur/action-discord-webhook@master
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           message: "✅ Build e análise finalizados com sucesso para o PR!"
