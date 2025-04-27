@@ -29,7 +29,11 @@ jobs:
       - name: Corrigir quebra de linha final e espaços extras
         run: |
           find . -name "*.py" -exec sed -i 's/[ \t]*$//' {} +
-          find . -name "*.py" -exec sed -i -e '$a\' {} +
+          find . -name "*.py" -exec sed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' {} \;
+          find . -name "*.py" -exec sed -i -e '$a\' {} \;
+          # Corrigir especificamente main.py para garantir apenas uma linha no final
+          sed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' ./main.py
+          sed -i -e '$a\' ./main.py
 
       - name: Análise de qualidade com Flake8
         run: |

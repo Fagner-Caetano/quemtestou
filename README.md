@@ -3,7 +3,7 @@
 Este projeto simula a execução de um container em Python, imprimindo periodicamente no terminal o tempo de execução.
 
 ---
- 
+
 ## 📁 Estrutura do Projeto
 
 - `main.py` — Script principal com a lógica de execução contínua.
@@ -32,7 +32,6 @@ Este repositório conta com validações automáticas para garantir a padroniza�
 - ✅ Correção automática de espaços em branco e quebras de linha
 - ✅ Integração contínua via **GitHub Actions**
 
-✅ - [CI/CD Status](https://github.com/Fagner-Caetano/quemtestou/actions/runs/14519930312)
 
 ---
 
@@ -74,4 +73,5 @@ Todas as verificações passam com sucesso (vide status acima)
 
 O projeto segue boas práticas de formatação e automação via CI/CD
 
-Desenvolvido por Fagner Caetano ✌️
+
+
