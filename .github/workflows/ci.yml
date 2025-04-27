@@ -18,7 +18,7 @@ jobs:
         uses: advanced-security/python-lint-code-scanning-action@v1.1.2
         with:
           linter: pylint
-         
+
   discord:
     runs-on: ubuntu-latest
     steps:
