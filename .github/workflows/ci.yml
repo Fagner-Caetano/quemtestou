@@ -23,9 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Discord Commits
-        uses: Sniddl/discord-commits@v1.6
-        with:
-          webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          template: "avatar-with-link"
-          include-extras: true 
+      - name: Send Discord Notification
+        run: |
+          curl -H "Content-Type: application/json" \
+          -X POST \
+          -d "{\"content\": \"✅ Build e análise finalizados com sucesso para o PR!\"}" \
+          ${{ secrets.DISCORD_WEBHOOK }}
