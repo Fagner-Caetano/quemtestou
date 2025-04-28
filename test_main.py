@@ -59,7 +59,6 @@ def test_get_current_time_extreme_values():
             datetime.datetime.strptime(time_str, "%H:%M:%S")
 
 
-
 def test_print_container_message_invalid_value():
     """Testa se a função lida com valores inválidos."""
     with pytest.raises(ValueError, match="Valor inválido: invalid"):
