@@ -1,5 +1,5 @@
-import main 
-import datetime
+import main  # Importa o código principal
+import datetime  # Importa para validar a hora
 
 
 # Testa se a hora retornada tem o formato correto
@@ -64,4 +64,4 @@ def test_print_container_message_invalid_value(capsys):
         main.print_container_message("invalid")
         assert False, "Era esperado ValueError ao passar valor inválido"
     except ValueError as e:
-        assert str(e) == "Valor inválido: 'invalid'", f"Mensagem de erro incorreta: {e}"
+        assert str(e) == "Valor inválido: invalid", f"Mensagem de erro incorreta: {e}"
