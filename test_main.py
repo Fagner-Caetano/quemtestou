@@ -19,14 +19,12 @@ def print_container_message(count):
     print(f"O container rodou {count}x...")
 
 
-
 # Testes Unitários Simplificados
 def test_print_container_message_positive_integer(capsys):
     """Testa se a função imprime a mensagem corretamente com um inteiro positivo."""
     main.print_container_message(5)
     captured = capsys.readouterr()
     assert "O container rodou 5x..." in captured.out
-
 
 
 def test_print_container_message_zero(capsys):
