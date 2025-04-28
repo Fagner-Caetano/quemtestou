@@ -44,11 +44,14 @@ docker build -t meu-container-python .  # para criar o container
 docker run -it meu-container-python     # para rodar o container
 ```
 ---
+<<<<<<< HEAD
 
 ## 🔗 Integração com Discord
 O projeto inclui uma integração com o Discord para notificações sobre o status do container. Quando o container for executado, o script envia uma mensagem ao canal do Discord configurado.
 
 ---
+=======
+>>>>>>> caa1645104f5b2292c36f5cc861c3d893800818e
 ## 📂 CI/CD
 A pipeline automatizada inclui os seguintes passos:
 
