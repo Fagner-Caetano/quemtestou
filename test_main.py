@@ -3,23 +3,6 @@ import datetime  # Importa para validar a hora
 import pytest
 
 
-# Função corrigida
-def print_container_message(count):
-    """
-    Imprime uma mensagem indicando quantas vezes o container rodou.
-
-    Args:
-        count: O número de vezes que o container rodou. Deve ser um inteiro positivo.
-
-    Raises:
-        ValueError: Se count não for um inteiro positivo.
-    """
-    if not isinstance(count, int) or count <= 0:
-        raise ValueError(f"Valor inválido: {count}")
-    print(f"O container rodou {count}x...")
-
-
-# Testes Unitários Simplificados
 def test_print_container_message_positive_integer(capsys):
     """Testa se a função imprime a mensagem corretamente com um inteiro positivo."""
     main.print_container_message(5)
