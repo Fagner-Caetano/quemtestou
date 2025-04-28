@@ -16,8 +16,6 @@ def print_container_message(count):
     # Verifica se count é um número inteiro positivo
     if not isinstance(count, int) or count <= 0:
         raise ValueError(f"Valor inválido: {count}")
-
-    # Imprime a mensagem apenas se count for um inteiro positivo
     print(f"O container rodou {count}x...")
 
 
@@ -43,7 +41,6 @@ def test_get_current_time_not_empty():
     """Testa se a hora retornada não está vazia."""
     time_str = main.get_current_time()
     assert time_str != "", "A hora retornada está vazia!"
-
 
 
 def test_get_current_time_extreme_values():
@@ -93,3 +90,4 @@ def test_print_container_message_invalid_value(capsys):
     else:
         # Se chegarmos aqui, significa que nenhum ValueError foi levantado, o que é um erro.
         assert False, "Era esperado ValueError ao passar valor inválido"
+
