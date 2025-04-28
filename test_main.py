@@ -1,5 +1,6 @@
 import main  # Importa o código principal
 import datetime  # Importa para validar a hora
+import pytest
 
 
 # Função corrigida
