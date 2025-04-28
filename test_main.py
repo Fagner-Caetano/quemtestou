@@ -1,3 +1,14 @@
+# Função corrigida
+def print_container_message(count):
+    # Verifica se count é um inteiro positivo
+    if not isinstance(count, int) or count <= 0:
+        raise ValueError(f"Valor inválido: {count}")
+
+    print(f"O container rodou {count}x...")
+
+
+# Testes
+
 import main  # Importa o código principal
 import datetime  # Importa para validar a hora
 
