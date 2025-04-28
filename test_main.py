@@ -19,18 +19,16 @@ def print_container_message(count):
     print(f"O container rodou {count}x...")
 
 
-
 # Testes Unitários Simplificados
 def test_print_container_message_positive_integer():
     """Testa se a função imprime a mensagem corretamente com um inteiro positivo."""
-    main.print_container_message(5)  # Não precisamos capturar a saída para este teste passar.
-    
+    main.print_container_message(5)
+
 
 def test_print_container_message_zero():
     """Testa se a função levanta ValueError para count igual a zero."""
     with pytest.raises(ValueError, match="Valor inválido: 0"):
         main.print_container_message(0)
-
 
 
 def test_print_container_message_negative_integer():
@@ -39,12 +37,10 @@ def test_print_container_message_negative_integer():
         main.print_container_message(-1)
 
 
-
 def test_print_container_message_invalid_type():
     """Testa se a função levanta ValueError para tipo inválido de count (string)."""
     with pytest.raises(ValueError, match="Valor inválido: abc"):
         main.print_container_message("abc")
-
 
 
 def test_get_current_time_format():
