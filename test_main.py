@@ -4,7 +4,7 @@ import datetime  # Importa para validar a hora
 
 # Função corrigida
 def print_container_message(count):
-    # Verifica se count é um inteiro positivo
+    # Verifica se count é um número inteiro positivo
     if not isinstance(count, int) or count <= 0:
         raise ValueError(f"Valor inválido: {count}")
 
@@ -73,7 +73,9 @@ def test_get_current_time_extreme_values():
 # Testa se a função lida com valores inválidos para o número de vezes
 def test_print_container_message_invalid_value(capsys):
     try:
+        # Passando um valor inválido (não inteiro)
         main.print_container_message("invalid")
         assert False, "Era esperado ValueError ao passar valor inválido"
     except ValueError as e:
+        # Verificando se a mensagem de erro é a esperada
         assert str(e) == "Valor inválido: invalid", f"Mensagem de erro incorreta: {e}"
