@@ -43,7 +43,6 @@ def test_get_current_time_not_empty():
     assert time_str != "", "A hora retornada está vazia!"
 
 
-
 def test_get_current_time_extreme_values():
     """
     Testa os valores extremos de hora e minuto.
@@ -59,7 +58,6 @@ def test_get_current_time_extreme_values():
     for time_str in invalid_times:
         with pytest.raises(ValueError):
             datetime.datetime.strptime(time_str, "%H:%M:%S")
-
 
 
 def test_print_container_message_invalid_value():
