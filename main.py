@@ -7,6 +7,18 @@ def get_current_time():
 
 
 def print_container_message(count):
+    """
+    Imprime uma mensagem indicando quantas vezes o container rodou.
+
+    Args:
+        count: O número de vezes que o container rodou. Deve ser um inteiro positivo.
+
+    Raises:
+        ValueError: Se count não for um inteiro positivo.
+    """
+    if not isinstance(count, int) or count <= 0:
+        raise ValueError(f"Valor inválido: {count}")
+        
     current_time = get_current_time()
     print(f"[{current_time}] O container rodou {count}x...")
 
