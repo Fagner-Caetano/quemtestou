@@ -27,12 +27,10 @@ def test_print_container_message_positive_integer(capsys):
     assert "O container rodou 5x..." in captured.out
 
 
-
 def test_print_container_message_zero(capsys):
     """Testa se a função levanta ValueError para count igual a zero."""
     with pytest.raises(ValueError, match="Valor inválido: 0"):
         main.print_container_message(0)
-
 
 
 def test_print_container_message_negative_integer(capsys):
@@ -41,12 +39,10 @@ def test_print_container_message_negative_integer(capsys):
         main.print_container_message(-1)
 
 
-
 def test_print_container_message_invalid_type(capsys):
     """Testa se a função levanta ValueError para tipo inválido de count (string)."""
     with pytest.raises(ValueError, match="Valor inválido: abc"):
         main.print_container_message("abc")
-
 
 
 def test_get_current_time_format():
