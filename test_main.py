@@ -16,9 +16,7 @@ def print_container_message(count):
     """
     if not isinstance(count, int) or count <= 0:
         raise ValueError(f"Valor inválido: {count}")
-    else:
-        print(f"O container rodou {count}x...")
-
+    print(f"O container rodou {count}x...")
 
 
 # Testes Unitários Simplificados
