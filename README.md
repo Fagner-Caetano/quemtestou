@@ -42,25 +42,14 @@ No terminal, utilize os seguintes comandos para rodar o container:
 
 docker build -t meu-container-python .  # para criar o container
 docker run -it meu-container-python     # para rodar o container
-
-🔗 Integração com Discord
-O projeto inclui uma integração com o Discord para notificações sobre o status do container. Quando o container for executado, o script envia uma mensagem ao canal do Discord configurado.
-
-Como configurar a integração:
-Crie um Webhook no seu servidor Discord.
-
-No código, adicione o URL do webhook:
-
-import requests
-
-def send_discord_notification(message):
-    webhook_url = "SEU_WEBHOOK_URL"
-    data = {"content": message}
-    requests.post(webhook_url, json=data)
-A cada execução do script, o Discord receberá uma notificação.
 ```
 ---
-📂 CI/CD
+
+## 🔗 Integração com Discord
+O projeto inclui uma integração com o Discord para notificações sobre o status do container. Quando o container for executado, o script envia uma mensagem ao canal do Discord configurado.
+
+---
+## 📂 CI/CD
 A pipeline automatizada inclui os seguintes passos:
 
 Instalação de dependências
@@ -74,8 +63,9 @@ Simulação de build e deploy
 Upload e download de artefatos (opcional)
 
 ---
-🧪 Testes Unitários com capsys
-Os testes unitários são realizados utilizando o framework pytest. Para testar a execução do script, usamos o capsys para capturar a saída do terminal e garantir que o comportamento esperado aconteça.
+
+## 🧪 Testes Unitários
+Com capsys os testes unitários são realizados utilizando o framework pytest. Para testar a execução do script, usamos o capsys para capturar a saída do terminal e garantir que o comportamento esperado aconteça.
 
 Exemplo de teste:
 Crie um arquivo de teste test_main.py:
