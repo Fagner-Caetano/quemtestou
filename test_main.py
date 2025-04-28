@@ -1,3 +1,6 @@
+import main  # Importa o código principal
+import datetime  # Importa para validar a hora
+
 # Função corrigida
 def print_container_message(count):
     # Verifica se count é um inteiro positivo
@@ -8,10 +11,6 @@ def print_container_message(count):
 
 
 # Testes
-
-import main  # Importa o código principal
-import datetime  # Importa para validar a hora
-
 
 # Testa se a hora retornada tem o formato correto
 def test_get_current_time_format():
