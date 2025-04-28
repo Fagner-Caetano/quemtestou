@@ -13,7 +13,6 @@ def print_container_message(count):
     Raises:
         ValueError: Se count não for um inteiro positivo.
     """
-    # Verifica se count é um número inteiro positivo
     if not isinstance(count, int) or count <= 0:
         raise ValueError(f"Valor inválido: {count}")
     print(f"O container rodou {count}x...")
@@ -24,7 +23,6 @@ def test_get_current_time_format():
     """Testa se a hora retornada tem o formato correto."""
     time_str = main.get_current_time()
     try:
-        # Tenta analisar o formato da hora retornada
         datetime.datetime.strptime(time_str, "%H:%M:%S")
     except ValueError:
         assert False, f"Formato errado: {time_str}"
@@ -45,49 +43,23 @@ def test_get_current_time_not_empty():
 
 def test_get_current_time_extreme_values():
     """
-    Testa se a hora é retornada corretamente nos valores extremos (00:00:00 e 23:59:59)
-    e se erros são gerados para valores inválidos.
+    Testa os valores extremos de hora e minuto.
     """
-    # Teste para o horário mínimo (00:00:00)
-    time_str = "00:00:00"
-    try:
-        datetime.datetime.strptime(time_str, "%H:%M:%S")
-    except ValueError:
-        assert False, f"Formato errado para hora mínima: {time_str}"
+    test_times = ["00:00:00", "23:59:59"]
+    for time_str in test_times:
+        try:
+            datetime.datetime.strptime(time_str, "%H:%M:%S")
+        except ValueError:
+            assert False, f"Formato errado para hora: {time_str}"
 
-    # Teste para o horário máximo (23:59:59)
-    time_str = "23:59:59"
-    try:
-        datetime.datetime.strptime(time_str, "%H:%M:%S")
-    except ValueError:
-        assert False, f"Formato errado para hora máxima: {time_str}"
-
-    # Teste para hora inválida (24:00:00)
-    time_str = "24:00:00"
-    try:
-        datetime.datetime.strptime(time_str, "%H:%M:%S")
-        assert False, f"Era esperado erro para hora inválida: {time_str}"
-    except ValueError:
-        pass  # Hora inválida gerou o erro esperado
-
-    # Teste para minuto inválido (12:60:00)
-    time_str = "12:60:00"
-    try:
-        datetime.datetime.strptime(time_str, "%H:%M:%S")
-        assert False, f"Era esperado erro para minuto inválido: {time_str}"
-    except ValueError:
-        pass  # Minuto inválido gerou o erro esperado
+    invalid_times = ["24:00:00", "12:60:00"]
+    for time_str in invalid_times:
+        with pytest.raises(ValueError):
+            datetime.datetime.strptime(time_str, "%H:%M:%S")
 
 
-def test_print_container_message_invalid_value(capsys):
-    """Testa se a função lida com valores inválidos para o número de vezes."""
-    try:
-        # Passando um valor inválido (não inteiro)
+
+def test_print_container_message_invalid_value():
+    """Testa se a função lida com valores inválidos."""
+    with pytest.raises(ValueError, match="Valor inválido: invalid"):
         main.print_container_message("invalid")
-    except ValueError as e:
-        # Verificando se a mensagem de erro é a esperada
-        assert str(e) == "Valor inválido: invalid", f"Mensagem de erro incorreta: {e}"
-    else:
-        # Se chegarmos aqui, significa que nenhum ValueError foi levantado, o que é um erro.
-        assert False, "Era esperado ValueError ao passar valor inválido"
-
